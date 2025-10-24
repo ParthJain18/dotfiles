@@ -9,7 +9,8 @@ sudo apt install -y \
     stow \
     tmux \
     bat \
-    zoxide
+    zoxide \
+    tree
 sudo snap install lsd
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

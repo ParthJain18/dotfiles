@@ -124,3 +124,5 @@ eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=$PATH:/snap/bin
+
+. "$HOME/.local/bin/env"
