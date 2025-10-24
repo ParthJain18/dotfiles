@@ -76,7 +76,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,9 +116,11 @@ alias tmux='tmux -u'
 alias dl-audiobook='yt-dlp -f "bestaudio[ext=m4a]/bestaudio" --cookies-from-browser firefox --embed-thumbnail --embed-metadata --add-metadata --embed-chapters -o "/data/audiobooks/%(title)s.%(ext)s"'
 alias ls='lsd'
 alias cat='batcat'
+alias sassysh='sassyshell ask'
 
 # Created by `pipx` on 2025-10-21 16:08:45
 export PATH="$PATH:/home/parth/.local/bin"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:/snap/bin

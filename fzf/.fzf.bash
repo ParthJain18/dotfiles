@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/parth/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/parth/.fzf/bin"
+if [[ ! "$PATH" == */home/parthlinux/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/parthlinux/.fzf/bin"
 fi
 
 eval "$(fzf --bash)"
