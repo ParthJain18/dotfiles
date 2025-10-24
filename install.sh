@@ -13,10 +13,12 @@ sudo apt install -y \
     curl \
     python3 \
     python3-pip \
+    
 sudo snap install lsd
 
 echo "Installing uv..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
+source "$HOME/.local/bin/env"
 uv tool install sassyshell
 
 if [ ! -d "$HOME/.fzf" ]; then
@@ -52,12 +54,14 @@ fi
 
 echo "Cleaning up default configs..."
 rm -f $HOME/.zshrc
+rm -f $HOME/.tmux.conf
 
 echo "Stowing dotfiles..."
-stow zsh tmux fzf
+stow zsh
+stow tmux
 
 echo "Running fzf installer..."
-~/.fzf/install --all
+~/.fzf/install --no-bash --no-zsh --no-fish
 
 echo "Changing default shell to Zsh..."
 chsh -s $(which zsh)

@@ -123,4 +123,7 @@ export PATH="$PATH:/home/parth/.local/bin"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source "$HOME/.fzf/shell/key-bindings.zsh"
 export PATH=$PATH:/snap/bin
+
+[ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
