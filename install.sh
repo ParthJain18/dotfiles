@@ -13,13 +13,11 @@ sudo apt install -y \
     curl \
     python3 \
     python3-pip \
-    pipx
 sudo snap install lsd
 
 echo "Installing uv..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
-pipx ensurepath
-pipx install sassyshell
+uv tool install sassyshell
 
 if [ ! -d "$HOME/.fzf" ]; then
     echo "Cloning fzf..."
