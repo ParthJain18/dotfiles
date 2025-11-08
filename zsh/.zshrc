@@ -76,7 +76,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,10 +120,8 @@ alias sassysh='sassyshell ask'
 
 # Created by `pipx` on 2025-10-21 16:08:45
 export PATH="$PATH:/home/parth/.local/bin"
-eval "$(zoxide init zsh)"
+export PATH="$PATH:/snap/bin"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source "$HOME/.fzf/shell/key-bindings.zsh"
-export PATH=$PATH:/snap/bin
+eval "$(zoxide init zsh)"
 
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
