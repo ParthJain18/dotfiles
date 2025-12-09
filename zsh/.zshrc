@@ -124,6 +124,7 @@ alias dl-audiobook='yt-dlp -f "bestaudio[ext=m4a]/bestaudio" --cookies-from-brow
 alias ls='lsd'
 alias cat='batcat'
 alias sassysh='sassyshell ask'
+alias caffeine='gnome-session-inhibit --inhibit idle sleep infinity'
 
 # Created by `pipx` on 2025-10-21 16:08:45
 export PATH="$PATH:/home/parth/.local/bin"
