@@ -144,7 +144,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 fastfetch() {
-    local random_cat=$(find ~/.config/fastfetch/cats -maxdepth 1 -name "*.txt" 2>/dev/null | shuf -n 1)
+    local random_cat=$(find ~/.config/fastfetch/cats/ -maxdepth 1 -name "*.txt" 2>/dev/null | shuf -n 1)
     command fastfetch --logo-type file --logo "$random_cat" "$@"
 }
 
