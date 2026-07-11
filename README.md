@@ -30,7 +30,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 
 ## Stow
 ```bash
-stow zsh git tmux fzf
+stow zsh git tmux fzf fastfetch
 ```
 
 ## Change default shell

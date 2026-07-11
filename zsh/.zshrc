@@ -133,3 +133,22 @@ export PATH="$PATH:/snap/bin"
 eval "$(zoxide init zsh)"
 
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# OpenClaw Completion
+source "/home/parth/.openclaw/completions/openclaw.zsh"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+fastfetch() {
+    local random_cat=$(find ~/.config/fastfetch/cats -maxdepth 1 -name "*.txt" 2>/dev/null | shuf -n 1)
+    command fastfetch --logo-type file --logo "$random_cat" "$@"
+}
+
+# Load custom SSH welcome screen
+if [ -f ~/.ssh_welcome.zsh ]; then
+    source ~/.ssh_welcome.zsh
+fi
