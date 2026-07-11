@@ -144,8 +144,13 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 fastfetch() {
-    local random_cat=$(find ~/.config/fastfetch/cats/ -maxdepth 1 -name "*.txt" 2>/dev/null | shuf -n 1)
-    command fastfetch --logo-type file --logo "$random_cat" "$@"
+    local random_cat=$(find -L ~/.config/fastfetch/cats/ -maxdepth 1 -type f | shuf -n 1)
+    local cols="$(tput cols)"
+    if [[ -n "$cols" ]] && (( cols <= 120 )); then
+        command fastfetch --logo-position top --logo-type file --logo "$random_cat" "$@"
+    else
+        command fastfetch --logo-type file --logo "$random_cat" "$@"
+    fi
 }
 
 # Load custom SSH welcome screen
