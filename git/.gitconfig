@@ -1,0 +1,7 @@
+[user]
+	name = Parth Jain
+	email = parthjain1812@gmail.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
