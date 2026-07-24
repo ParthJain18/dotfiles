@@ -5,10 +5,10 @@ set -e
 
 echo "🚀 Starting dotfiles installation..."
 
-# 1. Update and install system packages
+# 1. Update and install system packages (tmux removed)
 echo "📦 Installing system packages via apt..."
 sudo apt update
-sudo apt install -y zsh git stow tmux bat zoxide tree curl wget
+sudo apt install -y zsh git stow bat zoxide tree curl wget
 
 # Install lsd via snap if not installed
 if ! command -v lsd &> /dev/null; then
@@ -25,7 +25,7 @@ if [ ! -f ~/.local/bin/bat ]; then
     ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
-# 3. Install Binaries (FZF & Tealdeer)
+# 3. Install Binaries (FZF, Tealdeer, Superfile, Ghostty)
 if [ ! -d ~/.fzf ]; then
     echo "🔍 Installing fzf..."
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -47,6 +47,14 @@ if ! command -v spf &> /dev/null && ! command -v superfile &> /dev/null; then
     bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
 else
     echo "✅ superfile already installed. Skipping..."
+fi
+
+if ! command -v ghostty &> /dev/null; then
+    echo "👻 Installing Ghostty..."
+    # The official Ghostty docs recommend this for Ubuntu/Debian
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+else
+    echo "✅ ghostty already installed. Skipping..."
 fi
 
 # 4. Install Oh My Zsh
@@ -91,11 +99,12 @@ if [ ! -f tealdeer/.config/tealdeer/config.toml ]; then
     echo -e "[updates]\nauto_update = true" > tealdeer/.config/tealdeer/config.toml
 fi
 
-# Remove existing tealdeer config folder in ~ to prevent stow conflicts
+# Remove existing tealdeer and ghostty configs in ~ to prevent stow conflicts
 rm -rf ~/.config/tealdeer
+rm -rf ~/.config/ghostty
 
 # Loop through and stow existing directories
-for dir in zsh git tmux fzf fastfetch tealdeer; do
+for dir in zsh git tmux fzf fastfetch tealdeer superfile ghostty; do
     if [ -d "$dir" ]; then
         stow "$dir"
         echo "✅ Stowed $dir"
