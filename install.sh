@@ -42,6 +42,13 @@ else
     echo "✅ tealdeer already installed. Skipping..."
 fi
 
+if ! command -v spf &> /dev/null && ! command -v superfile &> /dev/null; then
+    echo "🗂️ Installing superfile..."
+    bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
+else
+    echo "✅ superfile already installed. Skipping..."
+fi
+
 # 4. Install Oh My Zsh
 if [ ! -d ~/.oh-my-zsh ]; then
     echo "🐚 Installing Oh My Zsh..."

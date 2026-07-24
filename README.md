@@ -33,6 +33,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 mkdir -p ~/.local/bin
 wget https://github.com/dbrgn/tealdeer/releases/latest/download/tealdeer-linux-x86_64-musl -O ~/.local/bin/tldr
 chmod +x ~/.local/bin/tldr
+
+# Superfiles (spf)
+bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
 ```
 
 3. Zsh Framework & Plugins
