@@ -57,7 +57,7 @@ git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
 
 ```
 cd ~/dotfiles
-stow zsh tmux fastfetch tealdeer
+stow bash zsh git tmux fzf fastfetch tealdeer superfile ghostty
 ```
 
 5. Finalize

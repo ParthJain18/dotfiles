@@ -103,8 +103,14 @@ fi
 rm -rf ~/.config/tealdeer
 rm -rf ~/.config/ghostty
 
+
+if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
+    echo "📦 Backing up default .bashrc to .bashrc.bak..."
+    mv ~/.bashrc ~/.bashrc.bak
+fi
+
 # Loop through and stow existing directories
-for dir in zsh git tmux fzf fastfetch tealdeer superfile ghostty; do
+for dir in zsh bash git tmux fzf fastfetch tealdeer superfile ghostty; do
     if [ -d "$dir" ]; then
         stow "$dir"
         echo "✅ Stowed $dir"
