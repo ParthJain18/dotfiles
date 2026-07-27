@@ -5,10 +5,10 @@ set -e
 
 echo "🚀 Starting dotfiles installation..."
 
-# 1. Update and install system packages (tmux removed)
+# 1. Update and install system packages
 echo "📦 Installing system packages via apt..."
 sudo apt update
-sudo apt install -y zsh git stow bat zoxide tree curl wget
+sudo apt install -y zsh git stow bat zoxide tree curl wget fd-find sd ripgrep
 
 # Install lsd via snap if not installed
 if ! command -v lsd &> /dev/null; then

@@ -54,6 +54,7 @@ alias cat='batcat'
 alias sassysh='sassyshell ask'
 alias caffeine='gnome-session-inhibit --inhibit idle sleep infinity'
 alias dl-audiobook='yt-dlp -f "bestaudio[ext=m4a]/bestaudio" --cookies-from-browser firefox --embed-thumbnail --embed-metadata --add-metadata --embed-chapters -o "/data/audiobooks/%(title)s.%(ext)s"'
+alias fd='fdfind'
 
 # =============================================================================
 # 5. FUNCTIONS & LAZY LOADING
