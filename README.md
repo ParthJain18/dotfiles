@@ -18,7 +18,7 @@ chmod +x install.sh
 
 ```
 sudo apt update
-sudo apt install -y zsh git stow tmux bat zoxide tree
+sudo apt install -y zsh git stow tmux bat zoxide tree fastfetch
 sudo snap install lsd
 ```
 

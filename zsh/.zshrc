@@ -79,7 +79,7 @@ npx()  { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm
 # =============================================================================
 # 6. POST-INITIALIZATION
 # =============================================================================
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
 

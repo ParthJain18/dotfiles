@@ -8,7 +8,7 @@ echo "🚀 Starting dotfiles installation..."
 # 1. Update and install system packages
 echo "📦 Installing system packages via apt..."
 sudo apt update
-sudo apt install -y zsh git stow bat zoxide tree curl wget fd-find sd ripgrep
+sudo apt install -y zsh git stow bat zoxide tree curl wget fd-find sd ripgrep fastfetch
 
 # Install lsd via snap if not installed
 if ! command -v lsd &> /dev/null; then
@@ -102,6 +102,7 @@ fi
 # Remove existing tealdeer and ghostty configs in ~ to prevent stow conflicts
 rm -rf ~/.config/tealdeer
 rm -rf ~/.config/ghostty
+rm -rf ~/.config/fastfetch
 
 
 if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
